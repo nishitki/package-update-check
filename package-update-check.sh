@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 servers='
 web01
 web02
@@ -29,6 +31,7 @@ done
 
 if [[ $check = "YES" ]]; then
   cat $$.txt
+  rm -rf $$.txt
   exit 2
 else
   exit 0
